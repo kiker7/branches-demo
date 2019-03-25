@@ -1,0 +1,4 @@
+[ {"branchId":1, "branchName": "Warsaw", "openingTime" : "10:00", "closingTime" : "16:00", "services": [{ "serviceId":1, "serviceName":"cash"},{ "serviceId":2, "serviceName":"deposit"}, {"serviceId":3, "serviceName":"loan"}]},
+{"branchId":2, "branchName": "Wroclaw", "openingTime" : "11:00", "closingTime" : "18:00", "services": [{ "serviceId":1, "serviceName":"cash"},{"serviceId":2, "serviceName":"deposit"}]},
+{"branchId":3, "branchName": "Poznan", "openingTime" : "08:00", "closingTime" : "17:00", "services": [{"serviceId":2, "serviceName":"deposit"}]}
+]
