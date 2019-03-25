@@ -4,16 +4,19 @@ import com.example.demo.data.domain.Branch;
 import com.example.demo.exception.BranchNotFoundException;
 import com.example.demo.services.BranchService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@PreAuthorize("hasRole('ADMIN')")
 public class BranchController {
 
     @Autowired
     private BranchService branchService;
 
+    @PreAuthorize("hasRole('CLIENT') or hasRole('ADMIN')")
     @GetMapping("/branches")
     public List<Branch> all() {
         return branchService.getAll();
@@ -24,6 +27,7 @@ public class BranchController {
         return branchService.addBranch(newBranch);
     }
 
+    @PreAuthorize("hasRole('CLIENT') or hasRole('ADMIN')")
     @GetMapping("/branches/{id}")
     public Branch getBranch(@PathVariable long id) {
         return branchService.getBranch(id)
